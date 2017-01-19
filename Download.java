@@ -22,7 +22,7 @@ class Download extends Observable implements Runnable {
 	
 	/*Initializes all the variables and starts download */
 	
-	Download(URL u)
+	public Download(URL u)
 	{
 		url=u;
 		size=-1;
