@@ -121,6 +121,7 @@ class Download extends Observable implements Runnable {
 			
 			if(connection.getResponseCode()/100!=2)
 			{
+				System.out.println("1");
 				error();
 			}
 			
@@ -128,6 +129,7 @@ class Download extends Observable implements Runnable {
 			
 			if(length<1)
 			{
+				System.out.println("2");
 				error();
 			}
 			
@@ -137,7 +139,7 @@ class Download extends Observable implements Runnable {
 				stateChanged();
 			}
 			
-			file=new RandomAccessFile(getFileName(url),"wr");
+			file=new RandomAccessFile(getFileName(url),"rw");
 			
 			stream=connection.getInputStream();
 			
@@ -176,6 +178,7 @@ class Download extends Observable implements Runnable {
 		}
 		catch(Exception e)
 		{
+			e.printStackTrace();
 			error();
 		}
 		finally
